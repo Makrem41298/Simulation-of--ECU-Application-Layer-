@@ -1,61 +1,70 @@
-# 🚗Simulation-of--ECU-Application-Layer-
+🚗 Simulation of ECU Application Layer
+
+This project simulates the ECU (Electronic Control Unit) application layer using MATLAB/Simulink with C++ integration and supports exporting models to FMU (Functional Mock-up Unit) for co-simulation.
 
 ⚙️ Requirements
 
-Install MinGW-w64 C/C++/Fortran Compiler
+MinGW-w64 Compiler (C/C++/Fortran)
 
-Download from: MATLAB Support for MinGW-w64
+Download: MATLAB Support for MinGW-w64
 
 Install and configure it with MATLAB.
 
-Install FMU Builder for Simulink
+FMU Builder for Simulink
 
-Download from: FMU Builder for Simulink
+Download: FMU Builder for Simulink
 
-matlab over 2022
+Required for exporting models to FMU format.
 
-This is required to export models to FMU (Functional Mock-up Unit) format.
+MATLAB R2022 or later
+
+Needed for full FMU Builder compatibility.
 
 🛠️ Compilation with S-Function Builder
 
-Put your C++ source code in the S-Function Builder (e.g. SERVICEECU.cpp and SERVICEECU_wrapper.cpp).
+Place your source files inside the project:
 
-Open MATLAB Command Window and run:
+SERVICEECU.cpp
+
+SERVICEECU_wrapper.cpp
+
+In MATLAB Command Window, run:
 
 mex -R2018a CXXFLAGS="$CXXFLAGS -std=c++17" SERVICEECU.cpp SERVICEECU_wrapper.cpp
 
 
-✅ This ensures your code is compiled with C++17 standard.
+✅ This ensures the code is compiled with the C++17 standard.
 
 🔄 Export to FMU in Simulink
 
-In Simulink, go to:
+Open your Simulink model.
 
-Modeling → Model Settings
+Go to Modeling → Model Settings.
 
-Under Simulation Target → set Language = C++
+Under Simulation Target:
 
-Under Code Information → Compiler flags → add:
+Set Language = C++.
+
+Under Code Information → Compiler flags, add:
 
 -std=c++17
 
 
 To generate FMU:
 
-In the top bar, click Flash icon (near Save)
+Click the Flash icon (near Save).
 
-Select Standalone FMU
+Select Standalone FMU.
 
-In the FMU Builder tab:
+Open the FMU Builder tab:
 
-Click Refresh
+Click Refresh.
 
-In the Contents section, select Standalone FMU
+In Contents, select Standalone FMU.
 
-Finally, click Create ✅
+Click Create ✅.
 
-📄 Project Structure
-
+📂 Project Structure
 ├── ClearDiagnosticDTC.h          # Diagnostic service header
 ├── DID.h                         # Data Identifier definitions
 ├── DIDReadService.h              # Service for reading DID
