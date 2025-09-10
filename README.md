@@ -56,10 +56,28 @@ Finally, click Create ✅
 
 📄 Project Structure
 
-SERVICEECU.cpp → ECU simulation source code
-
-SERVICEECU_wrapper.cpp → Wrapper for MATLAB/Simulink integration
-
-README.md → Documentation (this file)
-
-fmu/ → Generated FMU files
+├── ClearDiagnosticDTC.h          # Diagnostic service header
+├── DID.h                         # Data Identifier definitions
+├── DIDReadService.h              # Service for reading DID
+├── DIDWriteService.h             # Service for writing DID
+├── DTC.h                         # Diagnostic Trouble Code definitions
+├── DTCReadService.h              # Service for reading DTC
+├── ECUSensorData.h               # ECU sensor data structures
+├── ECUService.h                  # Main ECU service header
+├── ECUServiceFactory.h           # Factory for creating ECU services
+├── ECUSIMLONK.slx                # Simulink model (ECU simulation logic)
+├── FMECUService.slx              # FMU-compatible Simulink model
+├── out.mat                       # MATLAB output data
+├── README.md                     # Project documentation
+├── Routine.h                     # Routine definitions
+├── RoutineService.h              # Service for executing routines
+├── rtwmakecfg.m                  # MATLAB build configuration script
+├── SERVICEECU.c                  # C source for ECU
+├── SERVICEECU.cpp                # ECU simulation source code
+├── SERVICEECU.mexw64             # Compiled MEX file (Windows x64)
+├── SERVICEECU.tlc                # Target Language Compiler file
+├── SERVICEECU_wrapper.c          # Wrapper for MATLAB/Simulink integration (C)
+├── SERVICEECU_wrapper.cpp        # Wrapper for MATLAB/Simulink integration (C++)
+├── SERVICEECUsimlik.fmu          # Generated FMU for co-simulation
+├── SERVICEECUsimlik.slx          # Simulink model for FMU export
+├── SFB_SERVICEECU__SFB.mat       # Saved MATLAB/Simulink data
